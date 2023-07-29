@@ -1,0 +1,29 @@
+src/sandbird.c:282:54: style:inconclusive: Boolean expression '!buf->cap' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+    int err = sb_buffer_reserve(buf, (buf->cap << 1) | (!buf->cap));
+                                                     ^
+src/sandbird.c:704:5: style: Redundant initialization for 's'. The initialized value is overwritten before it is read. [redundantInitialization]
+  s = find_header_value(st->recv_buf.s, "Cookie");
+    ^
+src/sandbird.c:699:17: note: s is initialized
+  const char *s = st->recv_buf.s;
+                ^
+src/sandbird.c:704:5: note: s is overwritten
+  s = find_header_value(st->recv_buf.s, "Cookie");
+    ^
+src/sandbird.c:291:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/sandbird.c:697:0: style: The function 'sb_get_cookie' is never used. [unusedFunction]
+
+^
+src/sandbird.c:657:0: style: The function 'sb_get_header' is never used. [unusedFunction]
+
+^
+src/sandbird.c:745:0: style: The function 'sb_get_multipart' is never used. [unusedFunction]
+
+^
+src/sandbird.c:627:0: style: The function 'sb_write' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
